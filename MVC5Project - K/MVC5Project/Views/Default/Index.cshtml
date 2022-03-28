@@ -1,0 +1,37 @@
+﻿@using MVC5Project.Models
+@model List<Dersler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>Ders ID</th>
+        <th>Ders Adı</th>
+        <th>İŞLEMLER</th>
+    </tr>
+
+    <tbody>
+         
+        @foreach (var drs in Model)
+        {
+            <tr>
+                <td>@drs.DersID</td>
+                <td>@drs.DersAd</td>
+                <td><a href="/Default/Sil/@drs.DersID" class="btn btn-danger">SİL</a> 
+                    <a href="/Default/Getir/@drs.DersID" class="btn btn-warning">GÜNCELLE</a></td>
+            </tr>
+
+        }
+    </tbody>
+
+</table>
+<div class="row">
+    <div class="col-2 align-content-center">
+        <a href="@Url.Action("DersEkle","Default")" class="btn btn-warning">Ders Ekle</a>
+    </div>
+</div>

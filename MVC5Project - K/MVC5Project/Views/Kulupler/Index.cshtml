@@ -1,0 +1,33 @@
+﻿@using MVC5Project.Models
+@model List<Kulupler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+ 
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>Kulüp ID</th>
+        <th>Kulüp Adı</th>
+        <th>İŞLEMLER</th>
+
+    </tr>
+    <tbody>
+        @foreach (var kulup in Model)
+        {
+            <tr>
+                <td>@kulup.KulupID</td>
+                <td>@kulup.KulupAd</td>
+           
+                <td><a href="/Kulupler/Sil/@kulup.KulupID" class="btn btn-danger">SİL</a> 
+                 <a href="/Kulupler/Getir/@kulup.KulupID" class="btn btn-warning">GÜNCELLE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="row">
+    <div class="col-2 align-content-center">
+        <a href="@Url.Action("YeniEkle","Kulupler")" class="btn btn-warning">Ekle</a>
+    </div>
+</div>

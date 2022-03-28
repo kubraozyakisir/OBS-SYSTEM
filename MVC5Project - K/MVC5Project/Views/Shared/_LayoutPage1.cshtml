@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/css/style.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="pe-auto">
+    <div class="row alert-dark p-4 text-center">
+        <div class="col-12 ">
+            <h4>OBS SİSTEMİNE HOŞGELDİNİZ</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <ul class="list-group">
+                <li class="list-group-item"><a href="@Url.Action("Index","Ogrenci")">Öğrenci Listesi</a></li>
+                <li class="list-group-item"><a href="@Url.Action("Index","Default")">Dersler</a></li>
+                <li class="list-group-item"><a href="@Url.Action("Index","Kulupler")">Kulüpler</a></li>
+                <li class="list-group-item"><a href="@Url.Action("Index","Notlar")">Sınav Notları</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-9">
+            @RenderBody()
+        </div>
+    </div>
+    <div>
+       
+    </div>
+</body>
+</html>

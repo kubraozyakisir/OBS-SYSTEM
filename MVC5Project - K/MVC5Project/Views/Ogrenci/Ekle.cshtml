@@ -1,0 +1,43 @@
+﻿@model MVC5Project.Models.Kulupler
+
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+<form method="post" class="form-group mt-2">
+    <div class="col-5">
+        <label>Ogrenci Adı:</label> <br />
+        <input type="text" class="form-group" name="OgrAd" />
+    </div>
+    <div class="col-5 mt-2">
+        <label>Ogrenci Soyadı:</label><br />
+        <input type="text" class="form-group" name="OgrSoyad" />
+    </div>
+    <div class="col-5 mt-2">
+        <label>Ogrenci Fotoğraf:</label><br />
+        <input type="text" class="form-group" name="OgrFotograf" />
+    </div>
+
+    <div class="col-5 mt-2">
+        @Html.DropDownList("Cinsiyet",
+new[]{
+           new SelectListItem() {Value="1",Text="Kadın" },
+
+
+            new SelectListItem() {Value="2",Text="Erkek" }
+}, "Cinsiyet Seçin:", new { @class = "form-control" })
+    </div>
+    <div class="col-4 mt-2">
+        <label>Kulup :</label><br />
+        @Html.DropDownListFor(m => m.KulupID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    </div>
+
+    <div class="col-4  mt-5">
+        <div class="col-2 align-content-center">
+            <button class="btn btn-warning">Ekle</button>
+        </div>
+    </div>
+</form>
+

@@ -1,0 +1,26 @@
+﻿@model MVC5Project.Models.Ogrenciler
+@{
+    ViewBag.Title = "Getir";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@using (Html.BeginForm("Guncelle", "Ogrenci", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.OgrAd)
+    @Html.TextBoxFor(m => m.OgrAd, new { @class = "form-control" })
+    @Html.LabelFor(m => m.OgrSoyad)
+    @Html.TextBoxFor(m => m.OgrSoyad, new { @class = "form-control" })
+    @Html.LabelFor(m => m.OgrFotograf)
+    @Html.TextBoxFor(m => m.OgrFotograf, new { @class = "form-control" })
+    @Html.LabelFor(m => m.OgrCinsiyet)
+    @Html.TextBoxFor(m => m.OgrCinsiyet, new { @class = "form-control" })
+    @Html.LabelFor(m => m.OgrKulup)
+    @Html.TextBoxFor(m => m.OgrKulup, new { @class = "form-control" })
+</div>
+    
+    @Html.HiddenFor(m => m.OgrenciID)
+    <div>
+        <button class="btn btn-info">GÜNCELLE</button>
+    </div>
+}
+

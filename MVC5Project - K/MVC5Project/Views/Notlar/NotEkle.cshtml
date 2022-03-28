@@ -1,0 +1,58 @@
+﻿@using MVC5Project.Models;
+@model List<Notlar>
+@{
+    ViewBag.Title = "NotEkle";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<form method="post" class="form-group mt-2">
+    <div class="col-5 mt-2">
+        <label>Ders ID:</label><br />
+        <input type="text" class="form-group" name="DersID" />
+    </div>
+    <div class="col-5">
+        <label>Ögrenci ID:</label> <br />
+        <input type="text" class="form-group" name="OgrID" />
+    </div>
+    <div class="col-5 mt-2">
+        <label>Sınav 1:</label><br />
+        <input type="text" class="form-group" name="Sınav1" />
+    </div>
+    <div class="col-5 mt-2">
+        <label>Sınav 2:</label><br />
+        <input type="text" class="form-group" name="Sınav2" />
+    </div>
+    <div class="col-5 mt-2">
+        <label>Sınav 3:</label><br />
+        <input type="text" class="form-group" name="Sınav3" />
+    </div>
+    <div class="col-5 mt-2">
+        <label>Proje :</label><br />
+        <input type="text" class="form-group" name="Proje" />
+    </div>
+    <div class="col-5 mt-2">
+        <label>Ortalama: </label><br />
+        <input type="text" class="form-group" name="Ortalama" />
+    </div>
+    @*<div class="col-5 mt-2">
+        <label>Durum : </label><br />
+        <input type="text" class="form-group" name="Durum" />
+    </div>*@
+    <div class="col-5 mt-2">
+        <label>Durum : </label>
+        @Html.DropDownList("Durum",
+new[]{
+           new SelectListItem() {Value="1",Text="True"},
+
+
+            new SelectListItem() {Value="2",Text="False" }
+}, new { @class = "form-control" })
+    </div>
+    <div class="mt-5">
+        <div class="col-2 align-content-center">
+            <button class="btn btn-warning">SINAV EKLE</button>
+        </div>
+    </div>
+</form>
+
+

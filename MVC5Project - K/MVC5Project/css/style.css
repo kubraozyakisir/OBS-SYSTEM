@@ -1,0 +1,17 @@
+﻿body {
+}
+
+ul li {
+    background-color:azure;
+    list-style-type: none;
+}
+li a{
+    text-decoration:none;
+    color:black;
+}
+li:hover {
+    
+    background-color: aqua;
+}
+
+

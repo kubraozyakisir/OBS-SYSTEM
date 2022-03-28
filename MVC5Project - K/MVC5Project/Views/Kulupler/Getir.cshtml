@@ -1,0 +1,19 @@
+﻿@model MVC5Project.Models.Kulupler
+@{
+    ViewBag.Title = "Getir";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+ 
+@using (Html.BeginForm("Guncelle", "Kulupler", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m => m.KulupAd)
+                    @Html.TextBoxFor(m => m.KulupAd,new { @class = "form-control" })
+                </div>
+ 
+    @Html.HiddenFor(m=>m.KulupID)
+                <div>
+                    <button class="btn btn-info">GÜNCELLE</button>
+                </div>
+            }
+

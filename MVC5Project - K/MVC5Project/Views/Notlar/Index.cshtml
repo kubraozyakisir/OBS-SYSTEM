@@ -1,0 +1,43 @@
+﻿@using MVC5Project.Models;
+@model List<Notlar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>Not ID</th>
+        <th>Ders Adı</th>
+        <th>Ogrenci ID</th>
+        <th>Sınav</th>
+        <th>Sınav2 </th>
+        <th>Sınav3</th>
+        <th>Proje</th>
+        <th>Ortalama</th>
+        <th>Durum</th>
+        <th>İŞLEMLER</th>
+    </tr>
+    @foreach(var x in Model)
+            {
+                <tr>
+                    <th>@x.NotID</th>
+                    <th>@x.Dersler.DersAd</th>
+                    <th>@x.OgrID</th>
+                    <th>@x.Sınav1</th>
+                    <th>@x.Sınav2</th>
+                    <th>@x.Sınav3</th>
+                    <th>@x.Proje</th>
+                    <th>@x.Ortalama</th>
+                    <th>@x.Durum</th>
+                    <th><a href="/Notlar/Sil/@x.NotID" class="btn btn-danger">SİL</a> 
+                    <a href="/Notlar/NotGetir/@x.NotID" class="btn btn-warning">GÜNCELLE</a></th>
+                </tr>
+            }
+</table>
+<div class="row">
+    <div class="col-2 align-content-center">
+        <a href="@Url.Action("NotEkle","Notlar")" class="btn btn-warning">Yeni Sınav Girişi</a>
+    </div>
+</div>
